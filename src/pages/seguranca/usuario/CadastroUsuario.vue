@@ -1,5 +1,7 @@
 <template>
-    <p>{{msg}}</p>
+<div class="container">
+    <p> teste 2{{msg}}</p>
+</div>
 </template>
 <script src="./CadastroUsuario.vue.js"></script>
 <style scoped lang="scss">
