@@ -1,8 +1,8 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import PageLogin from '@/pages/login/PageLogin'
+import Vue from 'vue';
+import Router from 'vue-router';
+import PageLogin from '@/pages/seguranca/login/PageLogin';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
@@ -12,4 +12,4 @@ export default new Router({
       component: PageLogin
     }
   ]
-})
+});
