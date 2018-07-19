@@ -1,3 +1,8 @@
+<template>
+   <p> teste {{msg}}</p>
+</template>
+<script src="./ListaUsuario.vue.js"></script>
+<style scoped lang="scss">
 h1, h2 {
     font-weight: normal;
 }
@@ -12,3 +17,4 @@ li {
 a {
     color: #42b983;
 }
+</style>
