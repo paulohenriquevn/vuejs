@@ -1,15 +1,11 @@
 import Vue from 'vue';
-import Router from 'vue-router';
-import PageLogin from '@/pages/seguranca/login/PageLogin';
+import VueRouter from 'vue-router';
+import routes from './modules';
 
-Vue.use(Router);
-
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: PageLogin
-    }
-  ]
+Vue.use(VueRouter);
+console.log(routes);
+const router = new VueRouter({
+  routes
 });
+
+export default router;
