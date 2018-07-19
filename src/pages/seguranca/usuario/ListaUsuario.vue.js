@@ -1,5 +1,5 @@
 export default {
-    name: 'HelloWorld',
+    name: 'ListaUsuario',
     data () {
         return {
         msg: 'Testando roda lista'

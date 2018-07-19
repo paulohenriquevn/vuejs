@@ -1,5 +1,5 @@
 export default {
-    name: 'HelloWorld',
+    name: 'CadastroUsuario',
     data () {
         return {
         msg: 'Testando rota para cadastro'
