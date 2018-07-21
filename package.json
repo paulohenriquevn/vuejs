@@ -12,10 +12,11 @@
   },
   "dependencies": {
     "@deveodk/vue-toastr": "^1.0.4",
-    "axios": "^0.17.1",
+    "axios": "^0.18.0",
     "codemirror": "^5.35.0",
     "element-ui": "^2.1.0",
     "font-awesome": "^4.7.0",
+    "vee-validate": "^2.1.0-beta.6",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"

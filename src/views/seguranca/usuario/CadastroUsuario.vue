@@ -11,7 +11,7 @@
   </crud>
 </div>
 </template>
-<script src="./PageLogin.vue.js"></script>
+<script src="./CadastroUsuario.vue.js"></script>
 <style scoped lang="scss">
 h1, h2 {
     font-weight: normal;

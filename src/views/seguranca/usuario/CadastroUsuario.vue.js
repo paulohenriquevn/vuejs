@@ -2,7 +2,7 @@ import CRUD from '../../../components/Crud';
 
 export default {
   components: { crud: CRUD },
-  name: 'PageLogin',
+  name: 'CadastrarUsuario',
   data () {
     return {
       data: [],

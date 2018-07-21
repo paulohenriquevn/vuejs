@@ -7,16 +7,28 @@ import App from './App';
 import router from './router';
 import store from './store';
 import VueToastr from '@deveodk/vue-toastr';
+import VeeValidate, { Validator } from 'vee-validate';
+import ValidacaoUtil from '@/utils/validacaoUtil';
+import ptBr from 'vee-validate/dist/locale/pt_BR';
 
 import '@deveodk/vue-toastr/dist/@deveodk/vue-toastr.css';
 import 'font-awesome/css/font-awesome.min.css';
-import './assets/styles/element-variables.scss';
+import 'element-ui/lib/theme-chalk/index.css';
+import './assets/styles/index.scss';
 
 Vue.config.productionTip = false;
 
 Vue.use(Vuex);
-Vue.use(ElementUi);
+Vue.use(ElementUi, {
+  size: 'mini'
+});
 Vue.use(VueToastr);
+Validator.localize('pt_BR', ptBr);
+ValidacaoUtil(Validator);
+Vue.use(VeeValidate, {
+  fieldsBagName: 'fields-vee',
+  inject: false
+});
 
 /* eslint-disable no-new */
 new Vue({

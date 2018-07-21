@@ -1,12 +1,12 @@
-import Content from '@/pages/layout/Content';
-import PageLogin from '@/pages/seguranca/login/PageLogin';
-import ListaUsuario from '@/pages/seguranca/usuario/ListaUsuario';
-import CadastroUsuario from '@/pages/seguranca/usuario/CadastroUsuario';
+import Content from '@/views/layout/Content';
+import PageLogin from '@/views/seguranca/login/PageLogin';
+import ListaUsuario from '@/views/seguranca/usuario/ListaUsuario';
+import CadastroUsuario from '@/views/seguranca/usuario/CadastroUsuario';
 
 const routes = [
   {
-    path: '/',
-    name: 'HelloWorld',
+    path: '/login',
+    name: 'login',
     component: PageLogin
   },
   {
