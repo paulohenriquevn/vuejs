@@ -3,7 +3,9 @@ import VueRouter from 'vue-router';
 import routes from './modules';
 
 Vue.use(VueRouter);
-console.log(routes);
+
+export const routesMap = routes;
+
 const router = new VueRouter({
   routes
 });

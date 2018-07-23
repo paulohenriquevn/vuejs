@@ -1,4 +1,4 @@
-import Content from '@/views/layout/Content';
+import Layout from '@/views/layout/Layout';
 import PageLogin from '@/views/seguranca/login/PageLogin';
 import ListaUsuario from '@/views/seguranca/usuario/ListaUsuario';
 import CadastroUsuario from '@/views/seguranca/usuario/CadastroUsuario';
@@ -12,7 +12,7 @@ const routes = [
   {
     path: '/seguranca',
     name: 'seguranca',
-    component: Content,
+    component: Layout,
     children: [
       {
         path: 'usuarios',
