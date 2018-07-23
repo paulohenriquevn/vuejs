@@ -17,12 +17,22 @@ const routes = [
       {
         path: 'usuarios',
         name: 'lista-usuarios',
-        component: ListaUsuario
+        component: ListaUsuario,
+        meta: {
+          title: 'pagePermission',
+          icon: 'tab',
+          roles: ['admin']
+        }
       },
       {
         path: 'cadastro',
         name: 'cadastro-usuario',
-        component: CadastroUsuario
+        component: CadastroUsuario,
+        meta: {
+          title: 'pagePermission',
+          icon: 'tab',
+          roles: ['admin']
+        }
       }
     ]
   }
