@@ -1,12 +1,16 @@
 <template>
   <div v-if="!item.hidden && item.children" class="menu-wrapper">
+
       <router-link v-if="hasOneShowingChild(item.children) && !onlyOneChild.children&&!item.alwaysShow" :to="resolvePath(onlyOneChild.path)">
         <el-menu-item :index="resolvePath(onlyOneChild.path)" :class="{'submenu-title-noDropdown':!isNest}">
+          <i v-bind:class="item.meta.icon"></i>
           <span v-if="onlyOneChild.meta&&onlyOneChild.meta.title" slot="title">{{onlyOneChild.meta.title}}</span>
         </el-menu-item>
       </router-link>
+
       <el-submenu v-else :index="item.name||item.path">
         <template slot="title">
+          <i v-bind:class="item.meta.icon"></i>
           <span v-if="item.meta&&item.meta.title" slot="title">{{item.meta.title}}</span>
         </template>
         <template v-for="child in item.children" v-if="!child.hidden">
@@ -22,9 +26,7 @@
 </template>
 
 <script>
-import path from 'path'
-import { generateTitle } from '@/utils/i18n'
-
+import path from 'path';
 export default {
   name: 'SidebarItem',
   props: {
@@ -42,32 +44,29 @@ export default {
       default: ''
     }
   },
-  data() {
+  data () {
     return {
       onlyOneChild: null
-    }
+    };
   },
   methods: {
-    hasOneShowingChild(children) {
+    hasOneShowingChild (children) {
       const showingChildren = children.filter(item => {
         if (item.hidden) {
-          return false
+          return false;
         } else {
-          // temp set(will be used if only has one showing child )
-          this.onlyOneChild = item
-          return true
+          this.onlyOneChild = item;
+          return true;
         }
-      })
+      });
       if (showingChildren.length === 1) {
-        return true
+        return true;
       }
-      return false
+      return false;
     },
-    resolvePath(...paths) {
-      return path.resolve(this.basePath, ...paths)
-    },
-    generateTitle
+    resolvePath (...paths) {
+      return path.resolve(this.basePath, ...paths);
+    }
   }
-}
+};
 </script>
-

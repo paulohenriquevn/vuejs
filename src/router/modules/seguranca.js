@@ -13,14 +13,19 @@ const routes = [
     path: '/seguranca',
     name: 'seguranca',
     component: Layout,
+    meta: {
+      title: 'Segurança',
+      icon: 'fa fa-users'
+    },
     children: [
       {
         path: 'usuarios',
         name: 'lista-usuarios',
         component: ListaUsuario,
         meta: {
-          title: 'pagePermission',
-          icon: 'tab',
+          title: 'Lista de Usuários',
+          icon: 'fa fa-users',
+          hidden: false,
           roles: ['admin']
         }
       },
@@ -29,8 +34,9 @@ const routes = [
         name: 'cadastro-usuario',
         component: CadastroUsuario,
         meta: {
-          title: 'pagePermission',
-          icon: 'tab',
+          title: 'Cadastro de Usuários',
+          icon: 'fa fa-users',
+          hidden: false,
           roles: ['admin']
         }
       }

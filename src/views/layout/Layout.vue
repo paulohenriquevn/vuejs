@@ -1,6 +1,8 @@
 <template>
-  <div class="app-wrapper">
+  <div class="app-wrapper" :class="classObj">
+    <sidebar class="sidebar-container"></sidebar>
     <div class="main-container">
+      <navbar></navbar>
       <app-main></app-main>
     </div>
   </div>
@@ -8,20 +10,28 @@
 
 <script>
 import AppMain from './components/AppMain';
-import ResizeMixin from './mixin/ResizeHandler';
+import Sidebar from './components/Sidebar';
+import Navbar from './components/Navbar';
 
 export default {
   name: 'layout',
   components: {
-    AppMain
+    AppMain,
+    Sidebar,
+    Navbar
   },
-  mixins: [ResizeMixin],
   computed: {
+    sidebar () {
+      return this.$store.state.sistema.sidebarOpened;
+    },
+    classObj () {
+      return {
+        hideSidebar: !this.sidebar,
+        openSidebar: this.sidebar
+      };
+    }
   },
   methods: {
-    handleClickOutside () {
-      this.$store.dispatch('closeSideBar', { withoutAnimation: false });
-    }
   }
 };
 </script>

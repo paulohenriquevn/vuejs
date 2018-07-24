@@ -8,20 +8,26 @@
       background-color="#304156"
       text-color="#bfcbd9"
       active-text-color="#409EFF">
-      <sidebar-item v-for="route in permission_routers" :key="route.name" :item="route" :base-path="route.path"></sidebar-item>
+      <sidebar-item v-for="route in menus" :key="route.name" :item="route" :base-path="route.path"></sidebar-item>
     </el-menu>
   </el-scrollbar>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
-
+import SidebarItem from './SidebarItem';
 export default {
   components: { SidebarItem },
   computed: {
-    ...mapGetters('permissao',[
+    ...mapGetters('permissao', [
       'menus'
-    ])
+    ]),
+    ...mapGetters('sistema', [
+      'sidebar'
+    ]),
+    isCollapse () {
+      return !this.sidebar;
+    }
   }
-}
+};
 </script>
