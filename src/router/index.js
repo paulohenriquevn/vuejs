@@ -4,10 +4,11 @@ import routes from './modules';
 
 Vue.use(VueRouter);
 
-export const routesMap = routes;
-
+const vueRouters = routes.map(a => ({...a}));
 const router = new VueRouter({
-  routes
+  routes: vueRouters,
+  strict: process.env.NODE_ENV !== 'production'
 });
 
+export const routesMap = routes;
 export default router;

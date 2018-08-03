@@ -1,16 +1,12 @@
 <template>
-<div class="hello">
-  <crud :data="data" :form="form" :fields="mapItems" @create="handleCreate" @update="handleUpdate" @destroy="handleDestroy" @submit="handleSubmit">
-    <template slot="crud-form">
-       <el-form class="crud__form" ref="form" :model="form" :rules="computedRules" @keyup.native.13="submit">
+  <div class="hello">
+    <el-form class="crud__form" ref="form" :model="form">
         <el-form-item  :label="'teste'">
-          <el-input :type="'text'" v-model="form[key]"/>
+            <el-input :type="'text'" v-model="form.name"/>
         </el-form-item>
-      </el-form>
-    </template>
-  </crud>
-</div>
-</template>
+    </el-form>
+  </div>
+ </template>
 <script src="./CadastroUsuario.vue.js"></script>
 <style scoped lang="scss">
 h1, h2 {

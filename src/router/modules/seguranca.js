@@ -15,7 +15,8 @@ const routes = [
     component: Layout,
     meta: {
       title: 'Segurança',
-      icon: 'fa fa-users'
+      icon: 'fa fa-users',
+      isMenu: true
     },
     children: [
       {
@@ -25,7 +26,7 @@ const routes = [
         meta: {
           title: 'Lista de Usuários',
           icon: 'fa fa-users',
-          hidden: false,
+          isMenu: true,
           roles: ['admin']
         }
       },
@@ -36,7 +37,7 @@ const routes = [
         meta: {
           title: 'Cadastro de Usuários',
           icon: 'fa fa-users',
-          hidden: false,
+          isMenu: false,
           roles: ['admin']
         }
       }

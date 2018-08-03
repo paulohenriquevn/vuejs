@@ -7,7 +7,8 @@
 export default {
   name: 'App',
   created () {
-    this.$store.commit('permissao/LOAD_ROUTERS');
+  },
+  methods: {
   }
 };
 </script>

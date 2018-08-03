@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!item.hidden && item.children" class="menu-wrapper">
+  <div v-if="item.meta && item.meta.isMenu && item.children" class="menu-wrapper">
 
       <router-link v-if="hasOneShowingChild(item.children) && !onlyOneChild.children&&!item.alwaysShow" :to="resolvePath(onlyOneChild.path)">
         <el-menu-item :index="resolvePath(onlyOneChild.path)" :class="{'submenu-title-noDropdown':!isNest}">
@@ -13,7 +13,7 @@
           <i v-bind:class="item.meta.icon"></i>
           <span v-if="item.meta&&item.meta.title" slot="title">{{item.meta.title}}</span>
         </template>
-        <template v-for="child in item.children" v-if="!child.hidden">
+        <template v-for="child in item.children" v-if="child.meta.isMenu">
           <sidebar-item :is-nest="true" class="nest-menu" v-if="child.children&&child.children.length>0" :item="child" :key="child.path" :base-path="resolvePath(child.path)"></sidebar-item>
           <router-link v-else :to="resolvePath(child.path)" :key="child.name">
             <el-menu-item :index="resolvePath(child.path)">

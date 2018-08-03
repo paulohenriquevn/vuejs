@@ -19,10 +19,8 @@ import SidebarItem from './SidebarItem';
 export default {
   components: { SidebarItem },
   computed: {
-    ...mapGetters('permissao', [
-      'menus'
-    ]),
     ...mapGetters('sistema', [
+      'menus',
       'sidebar'
     ]),
     isCollapse () {

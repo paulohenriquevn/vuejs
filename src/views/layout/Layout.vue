@@ -1,6 +1,6 @@
 <template>
   <div class="app-wrapper" :class="classObj">
-    <sidebar class="sidebar-container"></sidebar>
+    <sidebar class="sidebar-container"/>
     <div class="main-container">
       <navbar></navbar>
       <app-main></app-main>
@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import AppMain from './components/AppMain';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
@@ -21,9 +22,9 @@ export default {
     Navbar
   },
   computed: {
-    sidebar () {
-      return this.$store.state.sistema.sidebarOpened;
-    },
+    ...mapGetters('sistema', [
+      'sidebar'
+    ]),
     classObj () {
       return {
         hideSidebar: !this.sidebar,
