@@ -19,21 +19,21 @@ export default {
   components: {
     AppMain,
     Sidebar,
-    Navbar
+    Navbar,
   },
   computed: {
     ...mapGetters('sistema', [
-      'sidebar'
+      'sidebar',
     ]),
-    classObj () {
+    classObj() {
       return {
         hideSidebar: !this.sidebar,
-        openSidebar: this.sidebar
+        openSidebar: this.sidebar,
       };
-    }
+    },
   },
   methods: {
-  }
+  },
 };
 </script>
 

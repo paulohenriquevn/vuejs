@@ -1,28 +1,28 @@
 import { routesMap } from '../../../router';
 import {
-  SET_SIDEBAR
+  SET_SIDEBAR,
 } from '../../mutation-types';
 
 const state = {
   sidebarOpened: true,
-  routes: JSON.parse(JSON.stringify(routesMap))
+  routes: JSON.parse(JSON.stringify(routesMap)),
 };
 
 const mutations = {
   [SET_SIDEBAR]: (state, payload) => {
     state.sidebarOpened = payload;
-  }
+  },
 };
 
 const actions = {
-  initial ({commit}) {
+  initial({ commit }) {
     commit('INIT_LAYOUT');
-  }
+  },
 };
 
 const getters = {
   sidebar: state => state.sidebarOpened,
-  menus: state => state.routes
+  menus: state => state.routes,
 };
 
 export default {
@@ -30,5 +30,5 @@ export default {
   state,
   mutations,
   actions,
-  getters
+  getters,
 };

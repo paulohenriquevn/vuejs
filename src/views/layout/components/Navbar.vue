@@ -33,20 +33,20 @@ import Hamburger from '@/components/Hamburger';
 
 export default {
   components: {
-    Hamburger
+    Hamburger,
   },
   computed: {
     ...mapGetters('sistema', [
-      'sidebar'
-    ])
+      'sidebar',
+    ]),
   },
   methods: {
-    toggleSideBar () {
+    toggleSideBar() {
       this.$store.commit('sistema/SET_SIDEBAR', !this.sidebar);
     },
-    logout () {
-    }
-  }
+    logout() {
+    },
+  },
 };
 </script>
 

@@ -1,7 +1,16 @@
 <template>
    <p> teste {{msg}}</p>
 </template>
-<script src="./ListaUsuario.vue.js"></script>
+<script>
+export default {
+  name: 'ListaUsuario',
+  data() {
+    return {
+      msg: 'Testando roda lista',
+    };
+  },
+};
+</script>
 <style scoped lang="scss">
 h1, h2 {
     font-weight: normal;

@@ -3,7 +3,7 @@ import ModuleSistema from './sistema';
 
 const merged = {
   ...ModuleSeguranca,
-  ...ModuleSistema
+  ...ModuleSistema,
 };
 
 export default merged;

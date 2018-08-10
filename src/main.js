@@ -5,6 +5,7 @@ import ElementUi from 'element-ui';
 import VueToastr from '@deveodk/vue-toastr';
 import VeeValidate, { Validator } from 'vee-validate';
 import ValidacaoUtil from '@/utils/validacaoUtil';
+import VueProgressBar from 'vue-progressbar';
 import ptBr from 'vee-validate/dist/locale/pt_BR';
 import '@deveodk/vue-toastr/dist/@deveodk/vue-toastr.css';
 import 'font-awesome/css/font-awesome.min.css';
@@ -15,7 +16,7 @@ import router from './router';
 import store from './store';
 
 Vue.use(ElementUi, {
-  size: 'mini'
+  size: 'mini',
 });
 
 Vue.use(VueToastr);
@@ -25,7 +26,22 @@ ValidacaoUtil(Validator);
 
 Vue.use(VeeValidate, {
   fieldsBagName: 'fields-vee',
-  inject: false
+  inject: false,
+});
+
+Vue.use(VueProgressBar, {
+  color: '#009f61',
+  failedColor: 'red',
+  thickness: '2px',
+  transition: {
+    speed: '0.2s',
+    opacity: '0.6s',
+    termination: 600,
+  },
+  autoRevert: true,
+  location: 'top',
+  inverse: false,
+  autoFinish: false,
 });
 
 /* eslint-disable no-new */
@@ -35,5 +51,5 @@ export default new Vue({
   el: '#app',
   router,
   store,
-  render: h => h(App)
+  render: h => h(App),
 });

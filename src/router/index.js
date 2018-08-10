@@ -4,10 +4,10 @@ import routes from './modules';
 
 Vue.use(VueRouter);
 
-const vueRouters = routes.map(a => ({...a}));
+const vueRouters = routes.map(a => ({ ...a }));
 const router = new VueRouter({
   routes: vueRouters,
-  strict: process.env.NODE_ENV !== 'production'
+  strict: process.env.NODE_ENV !== 'production',
 });
 
 export const routesMap = routes;

@@ -14,7 +14,30 @@
     </el-form>
   </div>
 </template>
-<script src="./PageLogin.vue.js"></script>
+<script scope>
+export default {
+  name: 'PageLogin',
+  data() {
+    return {
+      loginForm: {
+        username: 'admin',
+        password: '1111111',
+      },
+      passwordType: 'password',
+      loading: false,
+      showDialog: false,
+    };
+  },
+  computed: {
+  },
+  created() {
+  },
+  methods: {
+    handleLogin() {
+    },
+  },
+};
+</script>
 <style scoped lang="scss">
 $bg:#2d3a4b;
 $light_gray:#eee;

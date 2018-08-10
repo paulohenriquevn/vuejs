@@ -7,7 +7,7 @@ const routes = [
   {
     path: '/login',
     name: 'login',
-    component: PageLogin
+    component: PageLogin,
   },
   {
     path: '/seguranca',
@@ -16,7 +16,7 @@ const routes = [
     meta: {
       title: 'Segurança',
       icon: 'fa fa-users',
-      isMenu: true
+      isMenu: true,
     },
     children: [
       {
@@ -27,8 +27,8 @@ const routes = [
           title: 'Lista de Usuários',
           icon: 'fa fa-users',
           isMenu: true,
-          roles: ['admin']
-        }
+          roles: ['admin'],
+        },
       },
       {
         path: 'cadastro',
@@ -38,11 +38,11 @@ const routes = [
           title: 'Cadastro de Usuários',
           icon: 'fa fa-users',
           isMenu: false,
-          roles: ['admin']
-        }
-      }
-    ]
-  }
+          roles: ['admin'],
+        },
+      },
+    ],
+  },
 ];
 
 export default routes;

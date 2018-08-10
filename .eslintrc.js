@@ -9,29 +9,57 @@ module.exports = {
     browser: true,
     jquery: true
   },
-  extends: [
-    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    'plugin:vue/essential', 
-    // https://github.com/standard/standard/blob/master/docs/RULES-en.md
-    'standard'
-  ],
+  globals: {
+    _: true,
+  },
+  // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
+  // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
+  extends: ['plugin:vue/essential', 'airbnb-base'],
   // required to lint *.vue files
   plugins: [
     'vue'
   ],
+  // check if imports actually resolve
+  settings: {
+    'import/resolver': {
+      webpack: {
+        config: 'build/webpack.base.conf.js'
+      }
+    }
+  },
   // add your custom rules here
   rules: {
-    "semi": [2, "always"],
-    "semi-spacing": [2, { "before": false, "after": true }],
-    // allow async-await
-    'generator-star-spacing': ["error", {
-      "before": false,
-      "after": true,
-      "anonymous": "neither",
-      "method": {"before": true, "after": true}
+    "no-underscore-dangle": [0, { "allow": [] }],
+    // don't require .vue extension when importing
+    'import/extensions': ['error', 'always', {
+      js: 'never',
+      vue: 'never'
+    }],
+    // disallow reassignment of function parameters
+    // disallow parameter object manipulation except for specific exclusions
+    'no-param-reassign': ['error', {
+      props: true,
+      ignorePropertyModificationsFor: [
+        'state', // for vuex state
+        'acc', // for reduce accumulators
+        'e' // for e.returnvalue
+      ]
+    }],
+    // allow optionalDependencies
+    'import/no-extraneous-dependencies': ['error', {
+      optionalDependencies: ['test/unit/index.js']
     }],
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
-  }
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'prefer-template': 0,
+    'max-len': ['error', 500, 2, {
+      ignoreUrls: true,
+      ignoreComments: false,
+      ignoreRegExpLiterals: true,
+      ignoreStrings: true,
+      ignoreTemplateLiterals: true,
+    }],
+    'no-plusplus': 0,
+    'no-shadow': 0,
+  },
 }
